@@ -12,6 +12,10 @@ const guestSchema = new Schema(
       required: true,
       trim: true,
     },
+    customText: {
+      type: String,
+      trim: true,
+    },
     received: {
       type: Boolean,
       default: false,
@@ -24,7 +28,7 @@ const guestSchema = new Schema(
   { timestamps: true }
 );
 
-const guestEnums = ['alias', 'name', 'received', 'completed'];
+const guestEnums = ['alias', 'name', 'received', 'completed', 'customText'];
 
 const Guest = model('Guest', guestSchema);
 

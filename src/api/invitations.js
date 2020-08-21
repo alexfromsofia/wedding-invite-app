@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const guests = await Guest.find({});
 
-    res.status(201).send(guests);
+    res.status(200).send(guests);
   } catch (error) {
     res.status(400).send(error);
   }
@@ -30,12 +30,12 @@ router.post('/', async (req, res) => {
 });
 
 router.patch('/:id', async (req, res) => {
+  console.log(req.body);
   const updates = Object.keys(req.body);
   const isValidOperation = updates.every((update) =>
     // eslint-disable-next-line
     guestEnums.includes(update)
   );
-
   if (!isValidOperation) {
     return res.status(400).send({ error: 'Invalid update!' });
   }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useFetch from 'use-http';
+import axios from 'axios';
 
 import { StepContextProvider, GuestContextProvider } from './Context';
 import Steps from './Steps/Steps';
@@ -7,10 +7,11 @@ import Loader from './Loader';
 import useScroll from './hooks/useScroll';
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(1);
   const [initialLoading, setInitialLoading] = useState(true);
   const [invitations, setInvitations] = useState([]);
-  const { get, response, loading, error } = useFetch('/api/v1');
+
   useEffect(() => {
     initializeInvitations();
 
@@ -20,8 +21,14 @@ function App() {
   }, []);
 
   async function initializeInvitations() {
-    const initialInvitations = await get('/invitations');
-    if (response.ok) setInvitations(initialInvitations);
+    try {
+      const { data } = await axios.get('/api/v1/invitations');
+      setInvitations(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useScroll(step);

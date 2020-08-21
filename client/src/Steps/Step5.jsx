@@ -17,7 +17,7 @@ function Step5() {
       });
 
       if (status === 200) {
-        // TODO: Add logic for resign
+        // TODO: Add logic for resign!!
         setStep();
       }
     } catch (error) {

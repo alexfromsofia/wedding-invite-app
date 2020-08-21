@@ -8,7 +8,7 @@ require('./db/mongoose');
 
 require('dotenv').config();
 
-// const middlewares = require('./middlewares');
+const middlewares = require('./middlewares');
 const api = require('./api');
 
 const app = express();
@@ -19,8 +19,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/v1', api);
-// app.use(middlewares.notFound);
-// app.use(middlewares.errorHandler);
+app.use(middlewares.notFound);
+app.use(middlewares.errorHandler);
 
 app.use(express.static(path.join(`${__dirname}`, '..', '/client/build')));
 app.get('/*', (req, res) => {

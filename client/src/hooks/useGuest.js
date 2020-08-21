@@ -5,7 +5,6 @@ export default function useGuest(invitations) {
   const [guest, setGuest] = useState(null);
 
   useEffect(() => {
-    console.log(invitations);
     if (!invitations || !invitations.length) {
       return;
     }

@@ -21,9 +21,8 @@ app.use(express.json());
 app.use('/api/v1', api);
 // app.use(middlewares.notFound);
 // app.use(middlewares.errorHandler);
-app.use(
-  express.static(path.join(`${__dirname}`, '..', '/client/build/static'))
-);
+
+app.use(express.static(path.join(`${__dirname}`, '..', '/client/build')));
 app.get('/*', (req, res) => {
   res.sendFile(path.join(`${__dirname}`, '..', '/client/build/index.html'));
 });

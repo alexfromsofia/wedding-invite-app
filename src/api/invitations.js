@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
   const guest = new Guest({
     alias: req.body.alias,
     name: req.body.name,
+    customText: req.body.customText,
   });
 
   try {

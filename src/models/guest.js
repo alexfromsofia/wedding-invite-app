@@ -24,11 +24,22 @@ const guestSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    confirmed: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
 
-const guestEnums = ['alias', 'name', 'received', 'completed', 'customText'];
+const guestEnums = [
+  'alias',
+  'name',
+  'received',
+  'completed',
+  'confirmed',
+  'customText',
+];
 
 const Guest = model('Guest', guestSchema);
 

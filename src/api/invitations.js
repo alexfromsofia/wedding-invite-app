@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   const guest = new Guest({
     alias: req.body.name,
-    name: req.body.name,
+    name: req.body.alias,
   });
 
   try {

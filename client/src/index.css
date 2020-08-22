@@ -37,11 +37,11 @@ h3 {
 
 .step {
   display: flex;
-  min-width: -webkit-fill-available;
+  min-width: 100vw;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: -webkit-fill-available;
+  min-height: 100vh;
   overflow-y: auto;
   opacity: 0;
 }

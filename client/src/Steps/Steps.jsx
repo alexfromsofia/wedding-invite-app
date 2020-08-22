@@ -13,6 +13,15 @@ import Loader from '../Loader';
 function Steps() {
   const { invitations } = useContext(GuestContext);
   const { guest, loading } = useGuest(invitations);
+  const dueDate = 1598194800000;
+
+  if (+new Date() < dueDate && !(guest && guest.alias === 'test')) {
+    return (
+      <div className="slow-down">
+        <h1>Бързаш, отвори линка от QR кода на 23.08.2020 след 18:00ч</h1>
+      </div>
+    );
+  }
 
   if (loading || !guest) {
     return <Loader />;

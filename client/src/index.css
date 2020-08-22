@@ -11,6 +11,7 @@
   --white: #fff;
   --spacing: 8px;
   --spacing2: 16px;
+  --bodyPadding: 20px;
 
   /* Breakpoints */
   --bp-mobile-medium: 600px;
@@ -24,9 +25,8 @@ body {
   font-family: 'Lobster', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* overflow: hidden; */
   font-size: 28px;
-  padding: 20px;
+  padding: var(--bodyPadding);
   text-align: center;
 }
 
@@ -35,13 +35,18 @@ h3 {
   margin-bottom: var(--spacing2);
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .step {
   display: flex;
-  min-width: 100vw;
+  min-width: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  height: calc(100vh - var(--bodyPadding) * 2);
   overflow-y: auto;
   opacity: 0;
 }

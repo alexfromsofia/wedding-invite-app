@@ -62,6 +62,10 @@ button {
   margin: var(--spacing2) 0;
 }
 
+button.blue {
+  background-color: var(--cyan);
+}
+
 button:hover {
   background-color: var(--cyan);
 }
@@ -109,6 +113,10 @@ button:hover {
 .mr-mrs-img {
   width: 250px;
   height: 250px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .gradient-text {

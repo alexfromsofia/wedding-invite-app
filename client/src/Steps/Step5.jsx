@@ -6,18 +6,22 @@ import useGuest from '../hooks/useGuest';
 import MrMrs from '../assets/mrmrs.svg';
 
 function Step5() {
-  const { setStep } = useContext(StepContext);
+  const { setStep, setConfirmed } = useContext(StepContext);
   const { invitations } = useContext(GuestContext);
   const { guest } = useGuest(invitations);
   const request = async (confirmed) => {
     try {
-      const { status } = await axios.patch(`/api/v1/invitations/${guest._id}`, {
-        completed: true,
-        confirmed,
-      });
+      const { status } = await axios.patch(
+        `https://lachetoandyasi.herokuapp.com/api/v1/invitations/${guest._id}`,
+        {
+          completed: true,
+          confirmed,
+        }
+      );
+
+      setConfirmed(confirmed);
 
       if (status === 200) {
-        // TODO: Add logic for resign!!
         setStep();
       }
     } catch (error) {
@@ -38,7 +42,9 @@ function Step5() {
       <img className="mr-mrs-img" src={MrMrs} alt="" />
       <p className="gradient-text">Георгиеви</p>
       <div className="confirm-buttons">
-        <button onClick={handleConfirm}>Потвърждавам</button>
+        <button className="blue" onClick={handleConfirm}>
+          Потвърждавам
+        </button>
         <button onClick={handleReject}>Няма да дойда</button>
       </div>
     </div>

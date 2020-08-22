@@ -14,12 +14,8 @@ function Steps() {
   const { invitations } = useContext(GuestContext);
   const { guest, loading } = useGuest(invitations);
 
-  if (loading) {
+  if (loading || !guest) {
     return <Loader />;
-  }
-
-  if (!guest) {
-    return <div className="not-invited">Накъде така...Не си поканен.</div>;
   }
 
   return (

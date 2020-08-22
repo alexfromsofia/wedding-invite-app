@@ -25,7 +25,7 @@ export default function useScroll(step) {
     }
 
     window.scroll({
-      top: window.scrollY + (window.innerHeight - 40),
+      top: window.scrollY + window.innerHeight,
       behavior: 'smooth',
     });
   }, [step]);

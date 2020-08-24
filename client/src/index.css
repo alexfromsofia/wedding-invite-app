@@ -146,6 +146,40 @@ img {
   -webkit-text-fill-color: transparent;
 }
 
+.guests {
+}
+
+.guests-table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  color: dark;
+  font-size: 16px;
+  text-align: left;
+}
+
+thead {
+  background: #363049;
+  color: white;
+}
+
+thead th {
+  padding: var(--spacing2);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+tr {
+  position: relative;
+}
+
+tbody tr.confirmed td {
+  background-color: rgba(5, 214, 174, 0.3);
+}
+
+td {
+  padding: var(--spacing2);
+}
+
 @media only screen and (max-width: 1024px) {
   .map-responsive {
     padding-bottom: 60%;

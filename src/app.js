@@ -24,7 +24,6 @@ app.use('/api/v1', api);
 
 app.use(express.static(path.join(`${__dirname}`, '..', '/client/build')));
 app.get('/*', (req, res) => {
-  console.log('KUR');
   res.sendFile(path.join(`${__dirname}`, '..', '/client/build/index.html'));
 });
 

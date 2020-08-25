@@ -30,12 +30,22 @@ const guestSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    adultsCount: {
+      type: Number,
+      required: true,
+    },
+    childrenCount: {
+      type: Number,
+      required: false,
+    },
   },
   { timestamps: true }
 );
 
 const guestEnums = [
   'alias',
+  'adultsCount',
+  'childrenCount',
   'name',
   'received',
   'completed',

@@ -11,6 +11,7 @@
   --white: #fff;
   --spacing: 8px;
   --spacing2: 16px;
+  --spacing3: 24px;
   --bodyPadding: 20px;
 
   /* Breakpoints */
@@ -185,7 +186,25 @@ td {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: var(--spacing2);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary > div {
+  display: flex;
+  align-items: center;
+}
+
+.summary > div:first-of-type {
+  margin-right: var(--spacing3);
+}
+
+.summary span {
+  font-size: 50px;
+}
+
+.summary > div span:last-of-type {
+  margin-right: var(--spacing2);
 }
 
 @media only screen and (max-width: 1024px) {

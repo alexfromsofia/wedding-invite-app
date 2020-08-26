@@ -45,8 +45,18 @@ function Guests() {
         </tbody>
       </table>
       <div className="summary">
-        <div className="adults">Общо Млади: {totalAdults + 2}</div>
-        <div className="children">Общо Деца: {totalChildren + 1}</div>
+        <div className="adults">
+          <span role="img" aria-label="person">
+            👩👨
+          </span>{' '}
+          {totalAdults + 2}
+        </div>
+        <div className="children">
+          <span role="img" aria-label="child">
+            🧒
+          </span>{' '}
+          {totalChildren + 1}
+        </div>
       </div>
     </div>
   );
